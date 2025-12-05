@@ -3,15 +3,15 @@
 <head>
     <title>TheMatchaHouse | Order</title>
     <style>
-        /* AESTHETIC ENHANCEMENTS V3: More Engaging Header and CTAs */
-        
-        /* Tema Warna: Pink & Cokelat Hangat */
         :root {
-            --color-cream-light: #FFF8E1; /* Krem Muda/Putih Gading (Background) */
-            --color-pink-pastel: #FCE4EC; /* Pink Pastel Lembut (Footer Background) */
-            --color-terracotta-main: #D84315; /* Cokelat Terakota/Oranye Gelap (Aksen utama) */
-            --color-brown-dark: #4E342E; /* Cokelat Tua (Espresso - Teks/Tombol Utama) */
-            --color-brown-medium: #8D6E63; /* Cokelat Sedang (Taupe - Teks Subtlet) */
+            --color-cream-light: #FFF8E1;
+            --color-pink-pastel: #FCE4EC;
+            --color-terracotta-main: #D84315;
+            --color-brown-dark: #4E342E;
+            --color-brown-medium: #8D6E63;
+
+            --color-pink-pastel-medium: #F8CBD8;
+            --color-pink-pastel-medium-dark: #E4A7B8;
         }
 
         body {
@@ -23,19 +23,18 @@
         }
 
         h1 {
-            background: linear-gradient(135deg, var(--color-terracotta-main) 0%, var(--color-brown-dark) 100%);
+            background: linear-gradient(135deg, var(--color-terracotta-main), var(--color-brown-dark));
             color: white;
             text-align: center;
             padding: 30px 0;
             margin-bottom: 0;
-            font-size: 3.0em;
+            font-size: 3em;
             letter-spacing: 3px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
             border-bottom: 5px solid var(--color-pink-pastel);
         }
 
         h2 {
-            color: var(--color-brown-dark); 
             text-align: center;
             margin-top: 50px;
             margin-bottom: 20px;
@@ -43,247 +42,233 @@
             font-weight: 300;
         }
 
-        p {
-            text-align: center;
-            font-size: 1.05em;
-            margin-bottom: 40px;
-            color: var(--color-brown-medium);
-        }
-
-        /* Styling for the product list (ul) */
         ul {
             list-style: none;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; 
+            justify-content: center;
             gap: 40px;
             padding: 20px;
         }
 
-        /* Styling for each product item (li) */
         li {
-            background-color: #ffffff; 
+            background: white;
             border: 1px solid var(--color-pink-pastel);
             border-radius: 15px;
             padding: 25px;
             width: 280px;
             display: flex;
             flex-direction: column;
-            align-items: center; 
+            align-items: center;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: .4s;
         }
 
         li:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        /* Nama Produk */
-        .product-name {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: var(--color-brown-dark);
-            margin-bottom: 10px;
-        }
-        
-        /* Harga Produk */
-        .product-price {
-            font-size: 1.2em;
-            color: var(--color-terracotta-main);
-            font-weight: 800;
-            margin-top: 5px;
-        }
-
-        /* Separator Visual */
-        .separator {
-            width: 50%;
-            height: 3px;
-            background-color: var(--color-pink-pastel);
-            margin: 10px 0;
-            border-radius: 1px;
-        }
-
-        /* Styling for individual product images inside LI */
         li img {
-            display: block;
-            margin-top: 20px;
+            margin-top: 10px;
             border-radius: 50%;
-            object-fit: cover; 
-            height: 160px; 
-            width: 160px; 
-            border: 5px solid var(--color-brown-dark); 
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            height: 160px;
+            width: 160px;
+            object-fit: cover;
+            border: 5px solid var(--color-brown-dark);
         }
 
-        /* ==================================== */
-        /* GAYA BARU UNTUK FORMULIR PEMESANAN */
-        /* ==================================== */
-        .order-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            margin-top: 15px; /* Memberi ruang di atas form */
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .quantity-control label {
-            font-weight: bold;
-            color: var(--color-brown-medium);
-        }
-
-        .quantity-control input[type="number"] {
-            width: 50px;
-            padding: 8px;
-            border: 1px solid var(--color-pink-pastel);
-            border-radius: 8px;
-            text-align: center;
-            font-size: 1em;
-            color: var(--color-brown-dark);
-        }
-        
-        /* Tombol di dalam Form */
         .order-form button {
-            background-color: var(--color-terracotta-main); 
+            background: var(--color-terracotta-main);
             color: white;
-            border: none;
             padding: 10px 20px;
-            margin-top: 0; /* Override margin button default */
-            border-radius: 30px; 
+            border-radius: 30px;
+            border: none;
             cursor: pointer;
             font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s, transform 0.2s;
             width: 80%;
+            transition: 0.2s;
         }
 
         .order-form button:hover {
-            background-color: var(--color-brown-dark); 
+            background: var(--color-brown-dark);
             transform: scale(1.05);
         }
 
-        /* ==================================== */
-        /* GAYA UNTUK AREA CHECKOUT */
-        /* ==================================== */
         .checkout-area {
             text-align: center;
             padding: 40px 0;
-            background-color: var(--color-pink-pastel); 
+            background: var(--color-pink-pastel);
             margin-top: 60px;
         }
 
         .checkout-container {
+            background: white;
             display: inline-block;
-            background-color: white;
-            border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .checkout-container button {
-            padding: 18px 45px;
-            margin: 0 15px;
-            font-size: 1.1em;
-            letter-spacing: 1.5px;
-        }
-
-        /* Warna Tombol Checkout Khusus */
-        .btn-checkout-primary {
-            background-color: var(--color-brown-dark) !important;
-        }
-        .btn-checkout-primary:hover {
-            background-color: black !important;
-        }
-        .btn-checkout-secondary {
-            background-color: var(--color-brown-medium) !important;
-        }
-        .btn-checkout-secondary:hover {
-            background-color: var(--color-brown-dark) !important;
+        .cart-row button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 6px;
         }
     </style>
 </head>
+
 <body>
 
     <h1>TheMatchaHouse</h1>
     <p>Our Three Best Picks: Pure and Innovative Matcha Delights for a refined taste experience.</p>
 
     <h2>MAIN SELECTION MENU</h2>
+
     <ul>
+
+        <!-- Classic Matcha Latte -->
         <li>
             <div class="product-name">Classic Matcha Latte</div>
             <div class="product-price">Rp 25.000</div>
-            <div class="separator"></div>
-            <p style="font-size: 0.9em; margin: 10px 0 0;">The perfect blend of premium Matcha and fresh milk for a smooth, traditional flavor.</p>
-            
-            <form class="order-form" action="/add-to-cart" method="post">
+            <p style="font-size: 0.9em;">Smooth, premium matcha with fresh milk.</p>
+
+            <div class="order-form">
                 <div class="quantity-control">
-                    <label for="qty-matcha-latte">Quantity:</label>
-                    <input type="number" id="qty-matcha-latte" name="quantity" value="1" min="1" max="99">
-                    <input type="hidden" name="product_id" value="classic-matcha-latte">
+                    <label>Quantity:</label>
+                    <input type="number" id="qty-matcha-latte" value="1" min="1" max="99">
                 </div>
-                <button type="submit">Add to Cart</button>
-            </form>
-            
-            <img src="image1.jpg" alt="Classic Matcha Latte"> 
+
+                <button type="button"
+                onclick="addToCart('classic-matcha-latte', 'Classic Matcha Latte', 25000, document.getElementById('qty-matcha-latte').value)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <img src="https://uploads.onecompiler.io/442jhejb3/446jaz2qs/6_icedsnickerdoodleicedmatchalatte.jpg.webp" alt="Classic Matcha Latte">
         </li>
-        
+
+        <!-- Bubble Matcha Boba -->
         <li>
             <div class="product-name">Bubble Matcha Boba</div>
             <div class="product-price">Rp 35.000</div>
-            <div class="separator"></div>
-            <p style="font-size: 0.9em; margin: 10px 0 0;">Refreshing Matcha served with chewy brown sugar boba bubbles. A fun favorite!</p>
+            <p style="font-size: 0.9em;">Matcha tea with brown sugar boba.</p>
 
-            <form class="order-form" action="/add-to-cart" method="post">
+            <div class="order-form">
                 <div class="quantity-control">
-                    <label for="qty-matcha-boba">Quantity:</label>
-                    <input type="number" id="qty-matcha-boba" name="quantity" value="1" min="1" max="99">
-                    <input type="hidden" name="product_id" value="bubble-matcha-boba">
+                    <label>Quantity:</label>
+                    <input type="number" id="qty-matcha-boba" value="1" min="1" max="99">
                 </div>
-                <button type="submit">Add to Cart</button>
-                <img src="image1.jpg" alt="Bubble Matcha Boba"> 
 
-[Image of Bubble Matcha Boba]
+                <button type="button"
+                onclick="addToCart('bubble-matcha-boba', 'Bubble Matcha Boba', 35000, document.getElementById('qty-matcha-boba').value)">
+                    Add to Cart
+                </button>
+            </div>
 
-            </form>
+            <img src="https://uploads.onecompiler.io/442jhejb3/446jaz2qs/matcha-milk-tea.jpg" alt="Bubble Matcha Boba">
         </li>
-        
+
+        <!-- Chocolate Matcha Fusion -->
         <li>
             <div class="product-name">Chocolate Matcha Fusion</div>
             <div class="product-price">Rp 40.000</div>
-            <div class="separator"></div>
-            <p style="font-size: 0.9em; margin: 10px 0 0;">A rich combination of dark cocoa powder and authentic Matcha. Deep and satisfying.</p>
-            
-            <form class="order-form" action="/add-to-cart" method="post">
+            <p style="font-size: 0.9em;">Dark cocoa blended with real matcha.</p>
+
+            <div class="order-form">
                 <div class="quantity-control">
-                    <label for="qty-matcha-choc">Quantity:</label>
-                    <input type="number" id="qty-matcha-choc" name="quantity" value="1" min="1" max="99">
-                    <input type="hidden" name="product_id" value="chocolate-matcha-fusion">
+                    <label>Quantity:</label>
+                    <input type="number" id="qty-matcha-choc" value="1" min="1" max="99">
                 </div>
-                <button type="submit">Add to Cart</button>
-                <img src="https://share.google/images/wPlGnV8hhPlCdB2GS" alt="Chocolate Matcha Fusion"> 
-            </form>
+
+                <button type="button"
+                onclick="addToCart('chocolate-matcha-fusion', 'Chocolate Matcha Fusion', 40000, document.getElementById('qty-matcha-choc').value)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <img src="https://uploads.onecompiler.io/442jhejb3/446jaz2qs/glass-iced-latte-fusion-two-layers-matcha-chocolate-wooden-table_49003-983.jpg.avif" alt="Chocolate Matcha Fusion">
         </li>
+
     </ul>
 
+    <!-- CART AREA -->
     <div class="checkout-area">
         <div class="checkout-container">
-            <h3>Shopping Cart Summary (Not Functional Yet)</h3>
-            <p>Klik tombol di bawah untuk melanjutkan ke keranjang belanja Anda.</p>
-            <button class="btn-checkout-secondary">View Order</button>
-            <button class="btn-checkout-primary">Pay Now</button>
+
+            <h3>Your Cart</h3>
+
+            <div id="cart-list"></div>
+            <p id="cart-total" style="font-size: 1.3em;"></p>
+
+            <button class="btn-checkout-secondary" onclick="alert('Cart page coming soon!')">View Order</button>
+            <button class="btn-checkout-primary" onclick="alert('Payment system not connected yet')">Pay Now</button>
+
         </div>
     </div>
+
+
+<!-- CART SCRIPT -->
+<script>
+const cart = JSON.parse(localStorage.getItem("matcha_cart") || "[]");
+
+function saveCart() {
+    localStorage.setItem("matcha_cart", JSON.stringify(cart));
+}
+
+function addToCart(id, name, price, qty) {
+    qty = parseInt(qty);
+
+    let item = cart.find(p => p.id === id);
+    if (item) {
+        item.qty += qty;
+    } else {
+        cart.push({ id, name, price, qty });
+    }
+
+    saveCart();
+    updateCartDisplay();
+    alert(name + " added to cart!");
+}
+
+function updateCartDisplay() {
+    const list = document.getElementById("cart-list");
+    const totalBox = document.getElementById("cart-total");
+
+    list.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price * item.qty;
+
+        const row = document.createElement("div");
+        row.className = "cart-row";
+        row.innerHTML = `
+            <strong>${item.name}</strong><br>
+            Qty: ${item.qty} × Rp ${item.price.toLocaleString()} <br>
+            <button onclick="removeItem(${index})">Remove</button>
+            <hr>
+        `;
+        list.appendChild(row);
+    });
+
+    totalBox.innerHTML = "Total: <strong>Rp " + total.toLocaleString() + "</strong>";
+}
+
+function removeItem(i) {
+    cart.splice(i, 1);
+    saveCart();
+    updateCartDisplay();
+}
+
+window.onload = updateCartDisplay;
+</script>
 
 </body>
 </html>
